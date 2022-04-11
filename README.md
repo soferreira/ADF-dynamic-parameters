@@ -65,7 +65,7 @@ customers = [
 
 <h2>Create parameterized datasets</h2>
 
-<h2>Input Dataset</h2>
+<h3>Input Dataset</h3>
 
 1. Create a dataset.
 2. Select the parameterized linked service to access the different accounts.
@@ -77,7 +77,7 @@ customers = [
 ![output_datset](./images/input_dataset.png)
 
 <br></br>
-<h2>Output dataset</h2>
+<h3>Output dataset</h3>
 
 1. Create a dataset.
 2. Select the linked service to access the ISV storage.
