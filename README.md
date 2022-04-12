@@ -1,10 +1,10 @@
-# Azure Data Factory pipeline with dynamic parameters
+# Azure Data Factory -  Configuration of linked service and dataset parameters dynamically
+
+This sample demonstrates how to dynamically configure parametrized linked services and datasets during runtime, enabling the use of a single pipeline to access multiple sources/targets.
 
 ## Use Case
 
 As an ISV with multi-tenant solution that pulls data from multiple similar sources through different connection strings, you might be able to leverage a single ADF/Synapse pipeline which would differ only in parameter values.
-
-> tl;dr This sample demonstrates the creation of parametrized linked-services and datasets, enabling the use of a single pipeline definition to access multiple sources / targets.
 
 ![use_case](./images/use_case_diagram.png)
 
@@ -50,7 +50,7 @@ customers = [
 
 1. Create a new linked service and add the parameters ```account_name``` and ```account_secret```, that will be populated during runtime to access each customer storage.
 2. Select the 'Enter manually' method.
-3. Click on the URL text box and select the **Add Dynamic Content** option that will be displayed bellow the text box. Enter the account URL manually and replace ```<accountname>``` with the linked service parameter ```account_name```.
+3. Click on the URL text box and select the 'Add Dynamic Content' option that will be displayed bellow the text box. Enter the account URL manually and replace ```<accountname>``` with the linked service parameter ```account_name```.
 4. Select the Key Vault that stores the secrets of the customers accounts and assign the linked service parameter ```account_secret``` to Secret name.
 5. In case you want to parameterize the linked service to the target account, create a new linked service and repeat the previous steps.
 
