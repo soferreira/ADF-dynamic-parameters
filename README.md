@@ -1,4 +1,6 @@
-# Use Case
+# Azure Data Factory pipeline with dynamic parameters
+
+## Use Case
 
 As an ISV with multi-tenant solution that pulls data from multiple similar sources through different connection strings, you might be able to leverage a single ADF/Synapse pipeline which would differ only in parameter values.
 
