@@ -1,6 +1,6 @@
 # Use Case
 
-As an ISV with multi-tenant solution that pulls data from multiple similar sources throught different connection strings, you might be able to leverage a single ADF/Synapse pipeline which would differ only in parameter values.
+As an ISV with multi-tenant solution that pulls data from multiple similar sources through different connection strings, you might be able to leverage a single ADF/Synapse pipeline which would differ only in parameter values.
 
 > tl;dr This sample demonstrates the creation of parametrized linked-services and datasets, enabling the use of a single pipeline definition to access multiple sources / targets.
 
@@ -14,9 +14,9 @@ As an ISV with multi-tenant solution that pulls data from multiple similar sourc
 
 ## Create pipeline and activities
 
-For this sample, we will pull the data from each customer storage and save it in the ISV storage. To do that a ```Copy()``` activity will be defined inside a ```ForEach()``` activity that will iterate over an array of customers.
+For this sample, we will pull the data from each customer storage and save it in the ISV storage. A ```Copy()``` activity will be defined inside a ```ForEach()``` activity that will iterate over an array of customers.
 
-> Usually, the list of customers is retrieved from a control table. To keep this sample more generic, the list of customers was hardcoded in a pipeline parameter.
+> To keep this sample more generic, the list of customers was hardcoded in a pipeline parameter. However, for production this is an anti-pattern and we strongly advise using a metadata table or file to dynamically pass these values in.
 
 The array of customers follows the bellow format:
 
@@ -62,8 +62,8 @@ customers = [
 
 1. Create a dataset.
 2. Select the parameterized linked service to access the different accounts.
-3. Define the linked service properties/parameters. In this sample, account and Secret will be retrieved from the current loop ```item``` during runtime.
-4. Define the path to access the files. Container, Directory an Filename will be retrieved from the current ```item``` during runtime.
+3. Define the linked service properties/parameters. In this sample, account and Secret will be retrieved from the current loop ```@item()``` during runtime.
+4. Define the path to access the files. Container, Directory an Filename will be retrieved from the current ```@item()``` during runtime.
 5. Define this dataset as Source dataset of the ```Copy()``` activity.
 
 ![output_datset](./images/input_dataset.png)
@@ -72,7 +72,7 @@ customers = [
 
 1. Create a dataset.
 2. Select the linked service to access the ISV storage.
-3. Specify the path where the files should be saved. In this sample, each customer files will be saved in a different container. The values for the target container, directory and filename will be retrieved from the current loop ```item``` during runtime.
+3. Specify the path where the files should be saved. In this sample, each customer files will be saved in a different container. The values for the target container, directory and filename will be retrieved from the current loop ```@item()``` during runtime.
 4. Define this dataset as Sink dataset of the ```Copy()``` activity.
 
 ![output_datset](./images/output_dataset.png)
