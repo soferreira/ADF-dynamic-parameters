@@ -1,4 +1,4 @@
-# Azure Data Factory -  Configuration of linked service and dataset parameters dynamically
+# Azure Data Factory -  Dynamic configuration of linked service and dataset parameters
 
 This sample demonstrates how to dynamically configure parametrized linked services and datasets during runtime, enabling the use of a single pipeline to access multiple sources/targets.
 
