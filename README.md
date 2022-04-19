@@ -1,6 +1,6 @@
-# Azure Data Factory -  Dynamic configuration of linked service and dataset parameters
+# Reuse ADF entities with dynamic parameters
 
-This sample demonstrates how to dynamically configure [parametrized linked services](https://docs.microsoft.com/en-us/azure/data-factory/parameterize-linked-services?tabs=data-factory) and datasets during runtime, enabling the use of a single pipeline to access multiple sources/targets.
+This sample demonstrates how to dynamically configure [parametrized linked services](https://docs.microsoft.com/en-us/azure/data-factory/parameterize-linked-services?tabs=data-factory) and datasets during runtime, enabling the use of a single pipeline to access multiple sources/targets and avoiding the creation of multiple objects.
 
 ## Use Case
 
@@ -58,7 +58,7 @@ customers = [
 
 ![source_linked_service.png](./images/source_linked_service.png)
 
-## Create parameterized datasets
+## Create the datasets
 
 ### Input Dataset
 
